@@ -206,13 +206,24 @@ video::-webkit-media-controls-panel {
 }
 
 .series-container {
-    display: flex;
-    flex-wrap: wrap;
+    
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 20px;
     justify-content: center;
-    gap: 30px;
-    margin-top: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
-
+.series-container1
+{
+    display: flex;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 10px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 .series-box {
     background: white;
     padding: 25px;
@@ -252,23 +263,51 @@ video::-webkit-media-controls-panel {
 
 .details-btn {
     display: inline-block;
-    padding: 12px 25px;
-    background: linear-gradient(135deg, #1c1c1c, #2d2d2d);
-    color: white;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #000;
     text-decoration: none;
-    margin-top: 15px;
-    border-radius: 25px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    transition: all 0.3s ease;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out;
 }
+
+
 
 .details-btn:hover {
-    background: linear-gradient(135deg, #2d2d2d, #1c1c1c);
-    transform: translateY(-2px);
+    background-color: rgba(255, 255, 255, 1);
+}
+.buy-btn {
+    display: inline-block;
+    padding: 8px 15px;
+    background: #ff4500;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background 0.3s;
 }
 
+.buy-btn:hover {
+    background: #ff5722;
+}
+@media (max-width: 768px) {
+    .series-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .series-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+}
 /* Footer */
 footer {
     background: linear-gradient(to right, #1c1c1c, #2d2d2d);
@@ -625,6 +664,118 @@ p {
     font-size: 1.1em;
 }
 
+.car-card {
+    position: relative;
+    background: white;
+    overflow: hidden;
+    padding: 15px;
+    text-align: center;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.car-card img {
+    width: 100%;
+    height: 400px; /* Medium vertical size */
+    object-fit: cover; /* Prevents distortion */
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+.car-info {
+    margin-top: 10px;
+}
+.car-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+/* Text Styling */
+.car-info h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.car-info p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.car-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7));
+}
+.car-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Overlay content */
+.car-card .overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    z-index: 2;
+}
+.car-card h3 {
+    color: #1c2c5b; /* BMW Blue */
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, 0.5); /* Light shadow for visibility */
+    background: rgba(255, 255, 255, 0.7); /* White semi-transparent */
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+.car-row {
+    display: flex;
+    gap: 20px;
+    max-width: 1200px;
+}
+@media (max-width: 900px) {
+    .car-row {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .car-card {
+        width: 100%;
+        max-width: 320px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .car-card img {
+        height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .car-card img {
+        height: 450px;
+    }
+}
+
+.car-card:hover img {
+    transform: scale(1.05);
+}
+.car-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
 .config-section {
     margin-bottom: 30px;
     padding: 20px;
@@ -807,3 +958,67 @@ p {
 }
 
 }
+/* series body */
+.one{
+    
+    background-color: #121212; /* Dark Grey */
+    padding: 20px;
+    }
+.two{
+    background-color: #121212; /* Dark Grey */
+    padding: 20px;
+
+}
+.three{
+    background-color: #121212; /* Dark Grey */
+    padding: 20px;
+
+}
+.four{
+    background-color: #121212; /* Dark Grey */
+    padding: 20px;
+
+}
+.five{
+    background-color: #121212; /* Dark Grey */
+    padding: 20px;
+
+}
+.six{
+    background-color: #121212; /* Dark Grey */
+    padding: 20px;
+
+
+}
+.seven{
+    background-color: #121212; /* Dark Grey */
+    padding: 20px;
+
+}
+.eight{
+    background-color: #121212; /* Dark Grey */
+    padding: 20px;
+}
+.nine{
+    background-color: #121212; /* Dark Grey */
+    padding: 20px;
+}
+.ten{
+    background-color: #121212; /* Dark Grey */
+    padding: 20px;
+}
+.eleven{
+    background-color: #121212; /* Dark Grey */
+    padding: 20px;
+}
+.twelve{
+    background-color: #121212; /* Dark Grey */
+    padding: 20px;
+}
+.thirteen{
+    background-color: #121212; /* Dark Grey */
+    padding: 20px;
+}
+
+
+
