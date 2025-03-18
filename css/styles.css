@@ -112,7 +112,7 @@ video::-webkit-media-controls {
 
 video::-webkit-media-controls-panel {
     display: flex !important;
-    opacity: 19!important;
+    opacity: 100!important;
 }
 
 .hero-content h2 {
@@ -1020,5 +1020,133 @@ p {
     padding: 20px;
 }
 
+.bmw-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cars per row */
+    gap: 20px;
+    padding: 20px;
+}
 
+.bmw-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+}
 
+.bmw-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures full image is visible without cropping */
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.bmw-card:hover img {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.bmw-details {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background over the image */
+    color: white;
+    text-align: center;
+    border-radius: 0 0 12px 12px;
+    transition: background 0.3s ease-in-out;
+}
+
+.bmw-card:hover .bmw-details {
+    background: rgba(0, 0, 0, 0.9); /* Darker effect on hover */
+}
+
+.bmw-details h3 {
+    font-size: 22px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: linear-gradient(90deg, #0096FF, #00D4FF); /* BMW Blue Gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.bmw-details p {
+    font-size: 16px;
+    font-weight: 500;
+    color: #E0E0E0;
+    margin-top: 8px;
+    font-style: italic;
+}
+
+.bmw-details ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.bmw-details ul li {
+    font-size: 14px;
+    padding: 5px 0;
+    color: #F8F8F8;
+    position: relative;
+}
+
+.bmw-details ul li::before {
+    content: "✔"; /* Checkmark for luxury feel */
+    color: #FFD700; /* Gold color for premium effect */
+    font-weight: bold;
+    margin-right: 10px;
+}
+#bmw-series {
+    padding: 60px 20px;
+    background: #121212; /* Metallic Shine */
+    color: #fff;
+    border-radius: 15px;
+    position: relative;
+    box-shadow: inset 0 5px 15px rgba(255, 255, 255, 0.1), 
+                inset 0 -5px 15px rgba(0, 0, 0, 0.3); /* Polished Metal Look */
+}
+
+/* 3D Glass Effect for Cards */
+.bmw-card {
+    background: rgba(255, 255, 255, 0.07); /* Subtle Frosted Glass */
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); /* 3D Depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Polished Reflection Effect */
+#bmw-series::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 90%;
+    height: 20%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(-50%);
+    border-radius: 50%;
+    filter: blur(20px);
+    opacity: 0.5;
+}
+
+/* Smooth Hover Lift */
+.bmw-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Premium Heading */
+#bmw-series h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #f5f5f5; /* Polished Silver Look */
+    margin-bottom: 40px;
+}
